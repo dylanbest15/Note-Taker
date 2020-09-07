@@ -7,7 +7,7 @@ This website is a simple note taker that is easy to use. It allows the user to w
 - <a href="https://www.npmjs.com/package/uuid">uuid NPM</a>
 
 ## Screenshots
-![Note-Taker](screenshot1-hw9.png)
+![Note-Taker](screenshot-hw9.png)
 
 ## License
 Copyright ©2020 Dylan Best
