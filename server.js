@@ -33,11 +33,22 @@ app.post("/api/notes", function (req, res) {
         notes.push(newNote);
         fs.writeFile("./db/db.json", JSON.stringify(notes), function (err) {
             if (err) throw err;
-            res.json(notes);
+            res.status(200).end();
         })
     })
 })
 
+// api delete request
+app.delete("/api/notes/:id", function (req, res) {
+    fs.readFile("./db/db.json", function (err, data) {
+        if (err) throw err;
+        const newArray = JSON.parse(data).filter(note => note.id != req.params.id)
+        fs.writeFile("./db/db.json", JSON.stringify(newArray), function (err) {
+            if (err) throw err;
+            res.status(200).end();
+        })
+    })
+})
 
 
 // html routes
